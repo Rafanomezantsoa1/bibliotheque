@@ -1,0 +1,186 @@
+body {
+  background: #f8fafc;
+  background-image: radial-gradient(at 0% 0%, rgba(var(--primary-rgb, 109, 40, 217), 0.1) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(var(--secondary-rgb, 14, 165, 233), 0.1) 0px, transparent 50%);
+  font-family: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+body::before {
+  --primary-rgb: 109, 40, 217;
+  --secondary-rgb: 14, 165, 233;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 540px;
+  padding: 2.5rem;
+  position: relative;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border-radius: 12px 12px 0 0;
+}
+.container h1 {
+  font-weight: 700;
+  color: #6d28d9;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #475569;
+}
+.form-group input, .form-group select, .form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1e293b;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: #6d28d9;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15);
+}
+.form-group input:hover:not(:focus), .form-group select:hover:not(:focus), .form-group textarea:hover:not(:focus) {
+  border-color: #cbd5e1;
+}
+.form-group input::-moz-placeholder, .form-group select::-moz-placeholder, .form-group textarea::-moz-placeholder {
+  color: #94a3b8;
+}
+.form-group input::placeholder, .form-group select::placeholder, .form-group textarea::placeholder {
+  color: #94a3b8;
+}
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.checkbox-group input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  position: relative;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+.checkbox-group input[type=checkbox]:checked {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+}
+.checkbox-group input[type=checkbox]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox-group input[type=checkbox]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15);
+}
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #475569;
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+button:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+  background-image: linear-gradient(135deg, #956af7, #7635db);
+}
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.checkbox-group {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.6s;
+}
+
+button {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.form-group.focused label {
+  color: #6d28d9;
+}
+
+.form-group.error label {
+  color: #ef4444;
+}
+.form-group.error input, .form-group.error select, .form-group.error textarea {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.02);
+}
+
+.form-group.success input, .form-group.success select, .form-group.success textarea {
+  border-color: #10b981;
+}
+
+button.success {
+  background: linear-gradient(135deg, #10b981, #0c8a60);
+}
+
+label.required::after {
+  content: "*";
+  color: #6d28d9;
+  margin-left: 4px;
+}/*# sourceMappingURL=style.css.map */

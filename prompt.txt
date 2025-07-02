@@ -1,0 +1,6 @@
+
+maintenant j'aimerai faire pour la premiere 
+D'abord j'aimerai preciser que je n'utilise pas Maven
+fois un projet spring sur le web. Voici comment tu vas proceder, tu vas me creer d'abord le fichier xml qui va gérer les dependances.
+J'utilise le systeme servlet dans spring
+et cree un controller testController qui va lui faire un setAttribute de return le nom du vue a afficher pour chaque route, cette classe possede donc l'annotation controller
