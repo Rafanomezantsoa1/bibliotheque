@@ -62,15 +62,15 @@ CREATE TABLE adherent (
 --     date_update DATE
 -- );
 
-CREATE TABLE type_pret(
-    id SERIAL PRIMARY KEY,
-    type VARCHAR(50) --à domicile , sur place 
-);
-
 -- CREATE TABLE statut_pret(
 --     id SERIAL PRIMARY KEY,
 --     statur VARCHAR(50) --en cours, refusé, validé, annulé 
 -- );
+
+CREATE TABLE type_pret(
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(50) --à domicile , sur place 
+);
 
 CREATE TABLE norme_pret(
     id SERIAL PRIMARY KEY,
@@ -85,7 +85,14 @@ CREATE TABLE pret (
     id_adherent INT REFERENCES adherent(id),
     id_livre INT REFERENCES livre(id),
     date_pret TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    date_fin DATE,
     id_type INT REFERENCES type_pret(id)
+);
+
+CREATE TABLE prolongement_pret (
+    id SERIAL PRIMARY KEY,
+    duree_jour INT,
+    id_pret REFERENCES pret(id)
 );
 
 CREATE TABLE etat_reservation (

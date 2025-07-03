@@ -36,3 +36,19 @@ INSERT INTO genre_livre (id_genre, id_livre) VALUES
 (4, 9),  -- Dune - Fantasy
 (3, 10), -- Persepolis - Bande Dessinee
 (6, 10); -- Persepolis - Historique
+
+INSERT INTO type_pret (type) VALUES 
+('à domicile'),
+('sur place');
+
+INSERT INTO profil (profil) VALUES 
+('étudiant'),
+('enseignant'),
+('personnel'),
+('externe');
+
+INSERT INTO norme_pret (id_livre, id_profil, nb_max, durée) VALUES 
+(1, 1, 3, 14),  -- Livre 1, Profil 1: max 3 emprunts, durée 14 jours
+(2, 1, 2, 7),   -- Livre 2, Profil 1: max 2 emprunts, durée 7 jours
+(3, 2, 5, 21),  -- Livre 3, Profil 2: max 5 emprunts, durée 21 jours
+(1, 2, 4, 14);  -- Livre 1, Profil 2: max 4 emprunts, durée 14 jours
