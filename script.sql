@@ -110,14 +110,7 @@ CREATE TABLE penalite (
     date_fin DATE NOT NULL
 );
 
--- CREATE TABLE maintenance (
---     id SERIAL PRIMARY KEY,
---     id_livre INT REFERENCES livre(id),
---     date_maintenance DATE NOT NULL,
---     responsable VARCHAR(100)
--- );
-
-CREATE TABLE historique (
+CREATE TABLE historique_pret (
     id SERIAL PRIMARY KEY,
     id_pret INT REFERENCES pret(id),
     id_adherent INT REFERENCES adherent(id),
@@ -129,18 +122,3 @@ CREATE TABLE bibliothécaire (
     nom VARCHAR(20),
     identifiant INT --qui va me servir de mot de passe après
 );
-
--- Notifications (par mail ou SMS)
--- CREATE TABLE notification (
---     id SERIAL PRIMARY KEY,
---     id_adherent INT REFERENCES adherent(id),
---     type VARCHAR(50), -- email, sms, etc.
---     contenu TEXT,
---     date_envoi TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
---     statut_envoi BOOLEAN DEFAULT FALSE
--- );
-
--- CREATE TABLE categorie (
---     id SERIAL PRIMARY KEY,
---     nom VARCHAR(100) NOT NULL
--- );
