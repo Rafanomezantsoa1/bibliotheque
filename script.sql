@@ -44,29 +44,6 @@ CREATE TABLE adherent (
     carte_numero VARCHAR(50) UNIQUE
 );
 
--- CREATE TABLE paiement(
---     id SERIAL PRIMARY KEY,
---     id_adherent INT REFERENCES adherent(id),
---     montant INT
--- );
-
--- CREATE TABLE montant_a_payer(
---     id SERIAL PRIMARY KEY,
---     montant INT,
---     id_profil INT REFERENCES profil(id)
--- );
-
--- CREATE TABLE historique_montant(
---     id SERIAL PRIMARY KEY,
---     montant INT,
---     date_update DATE
--- );
-
--- CREATE TABLE statut_pret(
---     id SERIAL PRIMARY KEY,
---     statur VARCHAR(50) --en cours, refusé, validé, annulé 
--- );
-
 CREATE TABLE type_pret(
     id SERIAL PRIMARY KEY,
     type VARCHAR(50) --à domicile , sur place 
@@ -77,7 +54,7 @@ CREATE TABLE norme_pret(
     id_livre INT REFERENCES livre(id),
     id_profil INT REFERENCES profil(id),
     nb_max INT NOT NULL,
-    durée INT --nb de jours
+    duree INT NOT NULL --nb de jours
 );
 
 CREATE TABLE pret (
@@ -87,6 +64,18 @@ CREATE TABLE pret (
     date_pret TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     date_fin DATE,
     id_type INT REFERENCES type_pret(id)
+);
+
+CREATE TABLE mouvement_pret(
+    id SERIAL PRIMARY KEY,
+    id_pret INT REFERENCES pret(id),
+    id_etat_pret INT REFERENCES etat_pret(id),
+    date_retour DATE
+);
+
+CREATE TABLE etat_pret (
+    id SERIAL PRIMARY KEY,
+    etat VARCHAR(20) --en cours ,prolongé, retourné
 );
 
 CREATE TABLE prolongement_pret (

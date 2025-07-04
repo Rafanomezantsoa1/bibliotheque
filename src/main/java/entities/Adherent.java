@@ -1,7 +1,6 @@
 package entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -38,9 +37,10 @@ public class Adherent {
     @Column(name = "carte_numero", unique = true)
     private String carteNumero;
 
-    public Adherent() {
-    }
+    // Constructeur vide
+    public Adherent() {}
 
+    // Getters et setters
     public int getId() {
         return id;
     }

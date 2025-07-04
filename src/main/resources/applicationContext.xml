@@ -16,6 +16,15 @@
   <bean id="livreService" class="service.LivreService" />
   <bean id="genreService" class="service.GenreService" />
   <bean id="genreLivreService" class="service.GenreLivreService" />
+  <bean id="typePretService" class="service.TypePretService" />
+  <bean id="adherentRepository" class="service.AdherentRepository" />
+  <bean id="normePretService" class="service.NormePretService" />
+  <bean id="prolongementPretService" class="service.ProlongementPretService" />
+  <bean id="pretService" class="service.PretService" />
+  <bean id="adherentService" class="service.AdherentService" />
+  <bean id="mouvementPretService" class="service.MouvementPretService" />
+  <bean id="etatPretService" class="service.EtatPretService" />
+
   <context:annotation-config />
   <context:component-scan base-package="repository, services, entities" />
   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

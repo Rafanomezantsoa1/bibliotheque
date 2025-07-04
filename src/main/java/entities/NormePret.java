@@ -1,11 +1,7 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "norme_pret")
@@ -26,7 +22,7 @@ public class NormePret {
     @Column(name = "nb_max")
     private int nbMax;
 
-    @Column(name = "durée")
+    @Column(name = "duree")
     private Integer duree; // nb de jours
 
     public NormePret() {

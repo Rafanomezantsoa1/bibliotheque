@@ -28,4 +28,16 @@ public class NormePretService {
     public void deleteById(int id) {
         normePretRepository.deleteById(id);
     }
+
+    public NormePret findByLivreAndProfil(int livreId, int profilId) {
+        return normePretRepository.findByLivreIdAndProfilId(livreId, profilId);
+    }
+
+    public NormePret getByLivreIdAndProfilId(int livreId, int profilId) {
+        return normePretRepository.findByLivreIdAndProfilId(livreId, profilId);
+    }
+
+    public NormePret findByLivreIdAndProfilId(int livreId, int profilId) {
+        return normePretRepository.findByLivreIdAndProfilId(livreId, profilId);
+    }
 }

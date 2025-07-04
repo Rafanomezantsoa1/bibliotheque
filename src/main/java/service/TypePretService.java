@@ -1,15 +1,15 @@
 package service;
 
-import entities.TypePret;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.TypePretRepository;
 
-import java.util.List;
+import entities.TypePret;
+import repository.TypePretRepository;
 
 @Service
 public class TypePretService {
-
     @Autowired
     private TypePretRepository typePretRepository;
 
@@ -27,5 +27,9 @@ public class TypePretService {
 
     public void deleteById(int id) {
         typePretRepository.deleteById(id);
+    }
+
+    public TypePret findById(int id) {
+        return typePretRepository.findById(id).orElse(null);
     }
 }
