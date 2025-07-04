@@ -15,4 +15,6 @@ public interface LivreRepository extends JpaRepository<Livre, Integer> {
 
     @Query("SELECT l FROM Livre l JOIN l.genres g WHERE g.id_genre = :genreId")
     List<Livre> findByGenreId(@Param("genreId") Integer genreId);
+
+    
 }

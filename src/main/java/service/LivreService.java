@@ -48,4 +48,6 @@ public class LivreService {
     public List<Livre> getLivresByGenreId(Integer genreId) {
         return livreRepository.findByGenreId(genreId);
     }
+
+    
 }
