@@ -24,6 +24,7 @@
   <bean id="adherentService" class="service.AdherentService" />
   <bean id="mouvementPretService" class="service.MouvementPretService" />
   <bean id="etatPretService" class="service.EtatPretService" />
+  <bean id="penaliteService" class="service.PenaliteService" />
 
   <context:annotation-config />
   <context:component-scan base-package="repository, services, entities" />

@@ -1,5 +1,6 @@
 package service;
 
+import entities.Pret;
 import entities.ProlongementPret;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,4 +33,13 @@ public class ProlongementPretService {
     public List<ProlongementPret> getByPret(int pretId) {
         return prolongementPretRepository.findByPretId(pretId);
     }
+
+    public int countByPret(Pret pret) {
+    return prolongementPretRepository.countByPret(pret);
+}
+
+public List<ProlongementPret> getByPret(Pret pret) {
+    return prolongementPretRepository.findByPret(pret);
+}
+
 }

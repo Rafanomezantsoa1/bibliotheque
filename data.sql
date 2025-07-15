@@ -69,3 +69,12 @@ VALUES
     ('Fournier', 'Camille', '0689012345', 2, 1, '2023-08-30', '2024-08-30', 'CARTE008'),
     ('Girard', 'Nicolas', '0690123456', 1, 2, '2023-09-14', '2024-09-14', 'CARTE009'), -- inactif
     ('Mercier', 'Valérie', '0601234567', 3, 1, '2023-10-25', '2024-10-25', 'CARTE010');
+
+INSERT INTO etat_pret (etat) VALUES 
+    ('en cours'),
+    ('prolonge'),
+    ('retourne');
+
+-- UPDATE mouvement_pret
+--     SET id_etat_pret = 1
+--     WHERE id IN (1, 2);

@@ -18,10 +18,9 @@ public class GenreController {
 
     @GetMapping("/genres")
     public String getListGenre(Model model) {
-        List<Genre> genres = genreService.getAllGenres();
+        List<Genre> genres = genreService.getAllGenres();   
         model.addAttribute("listGenres", genres);
-        return "form-livre"; 
+        return "form-livre";
     }
-
 
 }

@@ -35,7 +35,7 @@ public class LivreController {
 
     // @GetMapping("/recherche1")
     // public String handleFormRecherche(Model model, HttpServletRequest request) {
-    //     return "form-recherche-livre";
+    // return "form-recherche-livre";
     // }
 
     @GetMapping("/form-livre")
@@ -65,7 +65,7 @@ public class LivreController {
         livre.setAuteur(auteur);
         livre.setIsbn(isbn);
         livre.setNbTotal(nbTotal);
-        livre.setDatePublication(LocalDate.parse(datePublication));  // assumes valid date input
+        livre.setDatePublication(LocalDate.parse(datePublication)); // assumes valid date input
 
         if (request.getParameter("idLivre") != null) {
             livre.setId(Integer.parseInt(request.getParameter("idLivre")));
@@ -117,8 +117,8 @@ public class LivreController {
 
     @GetMapping("/recherche")
     public String rechercherLivre(@RequestParam("genre_recherche") String genre,
-                                @RequestParam("a_chercher") String valeur,
-                                Model model) {
+            @RequestParam("a_chercher") String valeur,
+            Model model) {
         List<Livre> resultats;
 
         switch (genre) {
@@ -136,7 +136,7 @@ public class LivreController {
         }
 
         model.addAttribute("resultats", resultats);
-        return "resultats-recherche"; 
+        return "resultats-recherche";
     }
 
     @GetMapping("/classification")
@@ -152,5 +152,7 @@ public class LivreController {
 
         return "resultat-classification"; // nom du fichier JSP
     }
+
+    
 
 }

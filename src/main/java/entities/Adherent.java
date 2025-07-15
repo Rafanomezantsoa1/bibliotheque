@@ -38,7 +38,8 @@ public class Adherent {
     private String carteNumero;
 
     // Constructeur vide
-    public Adherent() {}
+    public Adherent() {
+    }
 
     // Getters et setters
     public int getId() {
