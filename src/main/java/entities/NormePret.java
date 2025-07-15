@@ -2,7 +2,6 @@ package entities;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "norme_pret")
 public class NormePret {

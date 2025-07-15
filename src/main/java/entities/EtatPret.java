@@ -35,4 +35,5 @@ public class EtatPret {
     public void setEtat(String etat) {
         this.etat = etat;
     }
+
 }

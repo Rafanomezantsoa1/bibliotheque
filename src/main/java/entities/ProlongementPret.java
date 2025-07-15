@@ -1,6 +1,7 @@
 package entities;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "prolongement_pret")
@@ -8,31 +9,32 @@ public class ProlongementPret {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "duree_jour")
-    private int dureeJour;
+    private Integer dureeJour;
 
     @ManyToOne
     @JoinColumn(name = "id_pret")
     private Pret pret;
 
-    public ProlongementPret() {
-    }
+    @Column(name = "date_prolongement")
+    private LocalDate dateProlongement = LocalDate.now();
 
-    public int getId() {
+    // Getters et setters
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getDureeJour() {
+    public Integer getDureeJour() {
         return dureeJour;
     }
 
-    public void setDureeJour(int dureeJour) {
+    public void setDureeJour(Integer dureeJour) {
         this.dureeJour = dureeJour;
     }
 
@@ -42,5 +44,13 @@ public class ProlongementPret {
 
     public void setPret(Pret pret) {
         this.pret = pret;
+    }
+
+    public LocalDate getDateProlongement() {
+        return dateProlongement;
+    }
+
+    public void setDateProlongement(LocalDate dateProlongement) {
+        this.dateProlongement = dateProlongement;
     }
 }

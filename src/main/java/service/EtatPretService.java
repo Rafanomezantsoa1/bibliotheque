@@ -24,4 +24,8 @@ public class EtatPretService {
     public void save(EtatPret etatPret) {
         etatPretRepository.save(etatPret);
     }
+
+    public EtatPret getById(int id) {
+        return etatPretRepository.findById(id).orElse(null);
+    }
 }
